@@ -1,19 +1,17 @@
 import { useMemo, useState } from "react";
+import BookCard from "../components/BookCard";
 
 export default function Books({ books }) {
   const [search, setSearch] = useState("");
-  const findBook = useMemo(
-    (book) => {
-      const searchText = search.toLowerCase();
-      return books.filter((book) => {
-        return (
-          book.title.toLowerCase().includes(searchText) ||
-          book.author.toLowerCase().includes(searchText)
-        );
-      });
-    },
-    [books, search],
-  );
+  const findBook = useMemo(() => {
+    const searchText = search.toLowerCase();
+    return books.filter((book) => {
+      return (
+        book.title.toLowerCase().includes(searchText) ||
+        book.author.toLowerCase().includes(searchText)
+      );
+    });
+  }, [books, search]);
   return (
     <div>
       <input
@@ -22,9 +20,23 @@ export default function Books({ books }) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      {findBook.map((book) => (
-        <h2>{book.title}</h2>
-      ))}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: 20,
+        }}
+      >
+        {findBook.map((book) => (
+          <BookCard
+            key={book.id}
+            title={book.title}
+            author={book.author}
+            genre={book.genre}
+            coverImage={book.coverImage}
+          />
+        ))}
+      </div>
     </div>
   );
 }
