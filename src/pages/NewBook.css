@@ -1,0 +1,73 @@
+.book-form{
+    width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #f7f5ed;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.title{
+    text-align: center;
+    color: var(--text);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.form-part {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.form-part label {
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 7px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #35483c;
+}
+
+.form-part input,
+.form-part select,
+.form-part textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #c8d0c5;
+  border-radius: 8px;
+  background: #fff;
+  color: #35483c;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-part input:focus,
+.form-part select:focus,
+.form-part textarea:focus {
+  border-color: #718b73;
+  box-shadow: 0 0 0 3px rgba(113, 139, 115, 0.15);
+}
+
+.form-part select {
+  cursor: pointer;
+}
+
+.form-part textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.form-part span {
+  margin: 5px;
+  font-size: 15px;
+  color: #b44b4b;
+}
+.submit-btn{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size:x-large;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #cc6d6d;
+    color: antiquewhite;
+}

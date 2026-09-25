@@ -1,9 +1,4 @@
-import React from 'react'
-import "./Index.css"
+import "./Index.css";
 export default function Footer() {
-  return (
-    <footer className='footer'>
-
-    </footer>
-  )
+  return <footer className="footer"></footer>;
 }
