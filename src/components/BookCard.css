@@ -1,0 +1,30 @@
+
+.book-card{
+    width:100%;
+   border:1px solid black;
+   background-color:#FFFFFF;
+   color:#3F4448;
+    border-radius: 12px;
+    overflow: hidden;
+    
+}
+.img-container {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+ .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.book-description{
+    padding: 10px;
+    text-decoration: none;
+}
+.book-description a{
+    text-decoration: none;
+    color:var(--text)
+    
+}

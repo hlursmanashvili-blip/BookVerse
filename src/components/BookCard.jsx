@@ -1,34 +1,30 @@
-export default function BookCard({ title, author, genre, coverImage }) {
+import { addFavorite } from "../store/favoritesSlice";
+import "./BookCard.css"
+import { Link } from "react-router-dom";
+import {useDispatch} from "react-redux"
+
+
+export default function BookCard({id, title, author, genre, coverImage }) {
+  const dispatch=useDispatch();
   return (
     <>
       <div
-        style={{
-          height: 500,
-          width: 300,
-          border: "1px solid gray",
-          borderRadius: 15,
-        }}
+      className="book-card"
       >
+        <div className="img-container" >
+            <Link to={`/books/${id}`}>
+            <img src={coverImage} alt="book-cover" />
+            </Link>
+        </div>
         <div
-          style={{
-            height: 300,
-            width: 300,
-            borderTopLeftRadius: 15,
-            borderTopRightRadius: 15,
-            backgroundImage: `url(${coverImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
-        <div
-          style={{
-            padding: 10,
-          }}
+          className="book-description"
         >
-          <h1>{title}</h1>
+          <Link to={`/books/${id}`}>
+            <h1>{title}</h1>
+          </Link>
           <p>{author}</p>
           <p>{genre}</p>
+          <button onClick={()=>dispatch(addFavorite(id))}>Add to favorites</button>
         </div>
       </div>
     </>

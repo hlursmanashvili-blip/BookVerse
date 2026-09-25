@@ -1,0 +1,25 @@
+
+:root {
+    --background: #FAF9F6;
+    --card: #FFFFFF;
+    --primary: #A8C3D1;
+    --secondary: #B8CDB5;
+    --accent: #E8B7A5;
+    --text: #3F4448;
+    --muted: #8C9599;
+    --border: #E5E1DA;
+}
+* {
+    box-sizing: border-box;
+}
+.body{
+    background-color: #FAF9F6;
+    color:var(--text);
+    font-family: "Bai Jamjuree", sans-serif;;
+    
+}
+
+.footer{
+    background-color: var(--secondary);
+    height: 500px;
+}

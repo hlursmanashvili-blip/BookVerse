@@ -1,0 +1,26 @@
+1. Folder/file structure
+2. Install libraries
+3. Layout
+4. Router
+5. Navbar + Footer
+6. Pages
+7. BookCard
+8. books.json
+9. fetch + useEffect
+10. map + BookCard
+11. Search + genre filter
+12. useMemo
+13. BookDetails + useParams
+14. Redux store
+15. bookSlice
+16. Provider
+17. useDispatch + selected books
+18. useSelector + Navbar count
+19. useLocalStorage
+20. AddBook + Formik
+21. Yup
+22. Add book logic
+23. useNavigate
+24. useRef + autofocus
+25. useCallback optimization
+26. ბოლოს ყველაფერი შეამოწმე route-ებით და refresh-ით
