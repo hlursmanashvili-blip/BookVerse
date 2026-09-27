@@ -1,14 +1,15 @@
 import { useMemo, useState } from "react";
 import BookCard from "../components/BookCard";
-import "./Index.css";
+import "../Index.css";
+import "./Books.css";
 
 export default function Books({ books }) {
   const [search, setSearch] = useState("");
-  const [genre, setGenre] = useState("All");
+  const [genre, setGenre] = useState("");
   const findBook = useMemo(() => {
     const searchText = search.toLowerCase();
 
-    if (genre === "All") {
+    if (genre === "" || genre === "All") {
       return books;
     }
 
@@ -22,7 +23,9 @@ export default function Books({ books }) {
   }, [books, search, genre]);
 
   return (
+  
     <section className="books">
+      <div className="filters"> 
       <input
         className="search"
         type="text"
@@ -30,14 +33,23 @@ export default function Books({ books }) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <div className="genre-buttons">
-        <button onClick={() => setGenre("All")}>All</button>
-        <button onClick={() => setGenre("Classic")}>Classic</button>
-        <button onClick={() => setGenre("Dystopian")}>Dystopian</button>
-        <button onClick={() => setGenre("Romance")}>Romance</button>
-        <button onClick={() => setGenre("Fantasy")}>Fantasy</button>
-        <button onClick={() => setGenre("Fiction")}>Fiction</button>
-      </div>
+      
+         <select className="genre-select" id="genre" value={genre} onChange={(e) => setGenre(e.target.value)} >
+          <option value="" disabled>Select a genre</option>
+          <option value="All">All</option> 
+          <option value="Classic">Classic</option> 
+          <option value="Dystopian">Dystopian</option>
+           <option value="Romance">Romance</option>
+            <option value="Fantasy">Fantasy</option>
+             <option value="Fiction">Fiction</option>
+             <option value="Historical fiction">Historical fiction</option> 
+             <option value="Sci-Fi">Sci-Fi</option>
+             <option value="Post-Apocalyptic">Post-Apocalyptic</option>
+             <option value="Thriller">Thriller</option>
+             <option value="Memoir">Memoir</option>
+
+             </select> 
+             </div>
       <div className="books-grid">
         {findBook.map((book) => (
           <BookCard

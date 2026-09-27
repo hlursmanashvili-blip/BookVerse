@@ -8,14 +8,23 @@ export const favoritesSlice=createSlice({
     initialState,
     reducers:{
         addFavorite:(state,action)=>{
-            state.books.push(action.payload);
-        },
-        countFavorites:(state,action)=>{
-            state.books.length
-        }
-    },
-    
-});
+               const oldBooks = state.books.find(
+        (bookId) => bookId === action.payload,
+      );
 
-export const {addFavorite}=favoritesSlice.actions;
+      if (!oldBooks) {
+        state.books.push(action.payload);
+      }
+    },
+            
+        
+     deleteFavorite: (state, action) => {
+  state.books = state.books.filter(
+    (bookId) => bookId !== action.payload
+  );
+}
+    
+}})
+
+export const {addFavorite, deleteFavorite}=favoritesSlice.actions;
 export default favoritesSlice.reducer;

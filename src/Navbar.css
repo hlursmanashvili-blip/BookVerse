@@ -8,12 +8,21 @@
     padding:0 30px;
     font-family: "Bai Jamjuree", sans-serif;;
 }
+.navbar__logo{
+font-size: 23px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    font-family:Roboto Family;
+}
+.navbar__logo a{
+    text-decoration: none;
+    color: var(--text);
+}
 .pages{
-    width:300px;
-    /* padding: 0 30px; */
     display: flex;
     align-items: center;
     justify-content: space-around;
+    gap: 30px;
 
 }
 .pages a{
@@ -21,6 +30,7 @@
     color: var(--text);
     width:80px;
     text-align: center;
+    font-weight: 400;
     padding: 10px 0;
     border-radius: 8px;
 }
@@ -30,23 +40,54 @@
 .pages a:focus{
     background-color: #cce1c9;
 }
-.fav{
+
+.new-book{
+    width: auto;
     padding: 15px 20px;
     border-radius: 15px;
     white-space: nowrap;
     border:1px solid var(--border);
-    background-color: var(--accent);
+    background-color: #cce1c9;
+    cursor: pointer;
+    text-decoration: none; 
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
     color: var(--text);
 }
-.new-book{
-     padding: 15px 20px;
+.new-book:hover{
+    border: 2px solid grey;
+}
+.buttons{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.fav-btn{
+    padding: 8px 20px;
     border-radius: 15px;
     white-space: nowrap;
     border:1px solid var(--border);
-    background-color: var(--accent);
-   
+    background-color:#cce1c9;
+    font-size: medium;
+    color:var(--text);
+    text-align: center;
+    position: relative;
+
+    
 }
-.new-book a{
-    text-decoration: none; 
-    color: var(--text);
+.heart {
+    fill: none;
+    color: rgb(255, 0, 85);
+}
+
+.heart.active {
+    fill: rgb(255, 0, 85);
+    color: rgb(255, 0, 85);
+}
+@media (max-width: 700px) {
+    .buttons,
+    .pages {
+        display: none;
+    }
 }

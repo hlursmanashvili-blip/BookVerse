@@ -1,34 +1,52 @@
 import { addingSchema } from "../validationSchema";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "./NewBook.css";
+import { useRef,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import useLocalStorage from "../hooks/useLocalStorage";
+
 export default function NewBook() {
+  const inputRef=useRef(null);
+  const navigate=useNavigate();
+  const[newBooks, setNewBooks]=useLocalStorage("newBooks",[])
+
+  const onSubmit = (values) => {
+    console.log(values);
+     setNewBooks([...newBooks, values]);
+  navigate("/books");
+};
+  
+    useEffect(() => {
+  inputRef.current.focus();
+}, []);
+
+  
   return (
-    <div>
-      <h1 className="title">Add a new book</h1>
+    <div className="newbook-form">
+      <h1 className="title">Add new book</h1>
       <Formik
         initialValues={{
           title: "",
           author: "",
           genre: "",
-          photo: "",
+          picture: "",
           description: "",
           year: "",
           rating: "",
         }}
         validationSchema={addingSchema}
-        onSubmit={(validation) => {
-          console.log(validation);
-        }}
+        onSubmit={onSubmit}
       >
         <Form className="book-form">
           <div className="form-part">
             <label htmlFor="title">Title</label>
-            <Field type="text" name="title" placeholder="Title" />
+            <Field type="text" name="title" placeholder="Title"
+            innerRef={inputRef}/>
             <ErrorMessage name="title" component="span" />
           </div>
 
           <div className="form-part">
-            <label htmlFor="author" type="text" name="">
+            <label htmlFor="author">
               Author
             </label>
             <Field type="text" name="author" placeholder="Author" />

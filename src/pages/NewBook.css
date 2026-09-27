@@ -1,4 +1,7 @@
-.book-form{
+
+.newbook-form{
+  padding: 30px;
+}.book-form{
     width: 100%;
   max-width: 600px;
   margin: 40px auto;
@@ -70,4 +73,5 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 8px;
     background-color: #cc6d6d;
     color: antiquewhite;
+    cursor: pointer;
 }

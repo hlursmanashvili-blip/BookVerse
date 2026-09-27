@@ -11,6 +11,7 @@
 }
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 .body{
     background-color: #FAF9F6;
@@ -19,7 +20,3 @@
     
 }
 
-.footer{
-    background-color: var(--secondary);
-    height: 500px;
-}
